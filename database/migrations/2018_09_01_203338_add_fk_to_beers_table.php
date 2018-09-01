@@ -17,7 +17,6 @@ class AddFkToBeersTable extends Migration
     public function up()
     {
         Schema::table('beers', function (Blueprint $table) {
-            //
             $table->integer('brewery_id')->unsigned();
             $table->foreign('brewery_id')->references('id')->on('breweries');
         });
@@ -33,8 +32,7 @@ class AddFkToBeersTable extends Migration
     public function down()
     {
         Schema::table('beers', function (Blueprint $table) {
-            //
-            $table->dropColumn(["brewery_id"]);
+            // $table->dropColumn(["brewery_id"]);
         });
     }
 }

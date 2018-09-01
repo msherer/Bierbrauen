@@ -17,14 +17,8 @@ class BreweriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('breweries')->insert([
-            'name' => str_random(10),
-            'website_url' => str_random(10)
-        ]);
-
-        DB::table('breweries')->insert([
-            'name' => str_random(10),
-            'website_url' => str_random(10)
-        ]);
+        factory(App\Brewery::class, 5)->create()->each(function ($brewery) {
+            $brewery->save();
+        });
     }
 }
