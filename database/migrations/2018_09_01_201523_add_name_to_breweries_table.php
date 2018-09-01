@@ -29,6 +29,7 @@ class AddNameToBreweriesTable extends Migration
     {
         Schema::table('breweries', function (Blueprint $table) {
             //
+            $table->dropColumn(["name", "website_url"]);
         });
     }
 }
