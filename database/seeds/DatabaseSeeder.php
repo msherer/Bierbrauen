@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-        $this->call(BreweriesTableSeeder::class);
+        // $this->call(BreweriesTableSeeder::class);
+
+        factory(App\Brewery::class, 5)->create()->each(function ($brewery) {
+            $brewery->save();
+        });
     }
 }
